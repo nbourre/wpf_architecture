@@ -25,7 +25,7 @@ namespace GameManagement.Models
         {
             games = new List<Game>()
             {
-
+                 
             };
         }
     }
