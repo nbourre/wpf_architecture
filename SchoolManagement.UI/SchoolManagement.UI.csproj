@@ -4,10 +4,11 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <AssemblyName>SchoolManagement.UI</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GameManagement.Models\GameManagement.Models.csproj" />
+    <ProjectReference Include="..\SchoolManagement.Models\SchoolManagement.Models.csproj" />
   </ItemGroup>
 
 </Project>

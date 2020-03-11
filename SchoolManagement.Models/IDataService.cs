@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GameManagement.Models
+namespace SchoolManagement.Models
 {
     interface IDataService<T>
     {
