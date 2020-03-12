@@ -2,7 +2,7 @@
 
 namespace SchoolManagement.Models
 {
-    class StudentDataService : IDataService<Student>
+    public class StudentDataService : IDataService<Student>
     {
         List<Student> students;
 

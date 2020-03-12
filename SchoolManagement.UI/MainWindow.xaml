@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchoolManagement.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource self}}">
+    <Window.Resources>
+        <Style TargetType="DataGridCell">
+            <Style.Setters>
+                <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+            </Style.Setters>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Fichier"/>
+            <MenuItem Header="Édition"/>
+            <MenuItem Header="Affichage"/>
+            <MenuItem Header="Enregistrement">
+                <MenuItem Header="Nouveau" Click="NewItem_Click"/>
+            </MenuItem>
+        </Menu>
+        <DataGrid ItemsSource="{Binding Students}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Numéro" Binding="{Binding RegistrationNumber}"/>
 
-    </Grid>
+                <DataGridTextColumn Header="Nom de famille" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Prénom" Binding="{Binding FirstName}"/>
+                <DataGridTemplateColumn Header="Actions" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Margin="3 0" Padding="3" Content="Modifier"/>
+                                <Button Margin="3 0" Padding="3" Content="Supprimer"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
 </Window>
