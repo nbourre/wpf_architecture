@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using SchoolManagement.Models;
+using System.Collections.Generic;
 
-namespace SchoolManagement.Models
+namespace SchoolManagement.Business
 {
     public class StudentDataService : IDataService<Student>
     {
