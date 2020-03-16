@@ -26,14 +26,27 @@ namespace SchoolManagement.UI
     {
         StudentDataService studentDataService;
         private ObservableCollection<Student> students;
-        
-        public ObservableCollection<Student> Students { 
+        private Student selectedStudent;
+
+        public ObservableCollection<Student> Students
+        {
             get => students;
             set
             {
                 students = value;
                 OnPropertyChanged();
             }
+        }
+
+        public Student SelectedStudent 
+        {
+            get => selectedStudent;
+            set
+            {
+                selectedStudent = value;
+                OnPropertyChanged();
+            }
+
         }
 
         public MainWindow()
@@ -68,6 +81,8 @@ namespace SchoolManagement.UI
             };
 
             Students.Add(student);
+            SelectedStudent = student;
+
         }
     }
 }

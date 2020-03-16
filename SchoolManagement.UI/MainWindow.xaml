@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchoolManagement.UI"
+        xmlns:attachedProperties="clr-namespace:SchoolManagement.UI.Helpers"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         DataContext="{Binding RelativeSource={RelativeSource self}}">
@@ -23,7 +24,9 @@
                 <MenuItem Header="Nouveau" Click="NewItem_Click"/>
             </MenuItem>
         </Menu>
-        <DataGrid ItemsSource="{Binding Students}" AutoGenerateColumns="False">
+        <DataGrid x:Name="dg" ItemsSource="{Binding Students}" AutoGenerateColumns="False"
+                  SelectedItem="{Binding SelectedStudent, Mode=TwoWay}"
+                  attachedProperties:SelectingItemAttachedProperty.SelectingItem="{Binding SelectedStudent}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Numéro" Binding="{Binding RegistrationNumber}"/>
 
