@@ -6,6 +6,11 @@ using System.Windows.Controls;
 
 namespace SchoolManagement.UI.Helpers
 {
+    /// <summary>
+    /// Classe permettant d'attacher une nouvelle propriété SelectingItem aux contrôles
+    /// Si vous désirez en savoir plus, lisez sur les Dependancy Property
+    /// Pour l'instant ce sujet sort du cadre du cours.
+    /// </summary>
     class SelectingItemAttachedProperty
     {
         public static readonly DependencyProperty SelectingItemProperty = DependencyProperty.RegisterAttached(
