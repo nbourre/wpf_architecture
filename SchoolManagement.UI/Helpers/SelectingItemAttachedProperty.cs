@@ -39,14 +39,18 @@ namespace SchoolManagement.UI.Helpers
             grid.Dispatcher.InvokeAsync(() =>
             {
                 grid.UpdateLayout();
-                grid.ScrollIntoView(grid.SelectedItem, null);
+
+                if (grid.SelectedItem != null)
+                    grid.ScrollIntoView(grid.SelectedItem, null);
             });
 
             // Works with .Net 4.0
             grid.Dispatcher.BeginInvoke((Action)(() =>
             {
                 grid.UpdateLayout();
-                grid.ScrollIntoView(grid.SelectedItem, null);
+
+                if (grid.SelectedItem != null)
+                    grid.ScrollIntoView(grid.SelectedItem, null);
             }));
         }
     }

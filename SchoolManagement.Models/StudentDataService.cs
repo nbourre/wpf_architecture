@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace SchoolManagement.Models
 {
@@ -13,11 +14,24 @@ namespace SchoolManagement.Models
 
         public IEnumerable<Student> GetAll()
         {
-            foreach (Student g in students)
+            foreach (Student s in students)
             {
-                yield return g;
+                yield return s;
             }
         }
+
+		public IEnumerable<Student> SearchByRegistrationNumber(string number)
+		{
+			//foreach (Student s in students)
+			//{
+			//	if (s.RegistrationNumber == number)
+			//	{
+			//		yield return s;
+			//	}
+			//}
+
+			return students.Where(s => s.RegistrationNumber == number);
+		}
 
         private void initValues()
         {
