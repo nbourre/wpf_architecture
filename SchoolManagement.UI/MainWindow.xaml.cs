@@ -1,7 +1,4 @@
-﻿using SchoolManagement.Models;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using SchoolManagement.UI.ViewModels;
 using System.Windows;
 
 namespace SchoolManagement.UI
@@ -9,79 +6,13 @@ namespace SchoolManagement.UI
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : Window
     {
-        StudentDataService studentDataService;
-        private ObservableCollection<Student> students;
-        private Student selectedStudent;
-
-        public ObservableCollection<Student> Students
-        {
-            get => students;
-            set
-            {
-                students = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public Student SelectedStudent 
-        {
-            get => selectedStudent;
-            set
-            {
-                selectedStudent = value;
-                OnPropertyChanged();
-            }
-
-        }
-
-        public MainWindow()
+        public MainWindow(MainViewModel viewModel)
         {
             InitializeComponent();
 
-            initValues();
-
-        }
-
-        private void initValues()
-        {
-            studentDataService = new StudentDataService();
-            Students = new ObservableCollection<Student>(studentDataService.GetAll());
-        }
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        private void NewItem_Click(object sender, RoutedEventArgs e)
-        {
-            Student student = new Student
-            {
-                RegistrationNumber = "0000000",
-                FirstName = "To be defined",
-                LastName = "To be defined",
-            };
-
-            Students.Add(student);
-            SelectedStudent = student;
-        }
-
-        private void Delete_Click(object sender, RoutedEventArgs e)
-        {
-            Students.Remove(SelectedStudent);
-        }
-
-        private void Modify_Click(object sender, RoutedEventArgs e)
-        {
-            StudentModify studentModify = new StudentModify(SelectedStudent);
-            
-            /// Afficher la fenêtre en modal
-            studentModify.ShowDialog();
+            DataContext = viewModel;
         }
     }
 }

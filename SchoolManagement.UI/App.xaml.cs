@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using SchoolManagement.UI.ViewModels;
 using System.Windows;
 
 namespace SchoolManagement.UI
@@ -13,5 +8,13 @@ namespace SchoolManagement.UI
     /// </summary>
     public partial class App : Application
     {
+        MainWindow _wnd;
+
+        public App()
+        {
+            MainViewModel vm = new MainViewModel();
+            _wnd = new MainWindow(vm);
+            _wnd.Show();
+        }
     }
 }

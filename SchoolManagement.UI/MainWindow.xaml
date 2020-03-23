@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:SchoolManagement.UI"
         xmlns:attachedProperties="clr-namespace:SchoolManagement.UI.Helpers"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        DataContext="{Binding RelativeSource={RelativeSource self}}">
+        Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
         <Style TargetType="DataGridCell">
             <Style.Setters>
@@ -21,7 +20,7 @@
             <MenuItem Header="Édition"/>
             <MenuItem Header="Affichage"/>
             <MenuItem Header="Enregistrement">
-                <MenuItem Header="Nouveau" Click="NewItem_Click"/>
+                <MenuItem Header="Nouveau"/>
             </MenuItem>
         </Menu>
         <DataGrid x:Name="dg" ItemsSource="{Binding Students}" AutoGenerateColumns="False"
@@ -37,8 +36,8 @@
                         
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Margin="3 0" Padding="3" Content="Modifier" Click="Modify_Click"/>
-                                <Button Margin="3 0" Padding="3" Content="Supprimer" Click="Delete_Click"/>
+                                <Button Margin="3 0" Padding="3" Content="Modifier"/>
+                                <Button Margin="3 0" Padding="3" Content="Supprimer"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
