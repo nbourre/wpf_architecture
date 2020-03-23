@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using SchoolManagement.Models;
+using System.Collections.Generic;
 
-namespace SchoolManagement.Models
+namespace SchoolManagement.Business
 {
     public class StudentDataService : IDataService<Student>
     {
@@ -14,24 +14,11 @@ namespace SchoolManagement.Models
 
         public IEnumerable<Student> GetAll()
         {
-            foreach (Student s in students)
+            foreach (Student g in students)
             {
-                yield return s;
+                yield return g;
             }
         }
-
-		public IEnumerable<Student> SearchByRegistrationNumber(string number)
-		{
-			//foreach (Student s in students)
-			//{
-			//	if (s.RegistrationNumber == number)
-			//	{
-			//		yield return s;
-			//	}
-			//}
-
-			return students.Where(s => s.RegistrationNumber == number);
-		}
 
         private void initValues()
         {

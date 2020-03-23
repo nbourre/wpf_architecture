@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SchoolManagement.Models
+namespace SchoolManagement.Business
 {
     interface IDataService<T>
     {
