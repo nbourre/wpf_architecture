@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace SchoolManagement.UI.ViewModels
 {
-    public class MainViewModel : BaseViewModel
+    public class StudentsViewModel : BaseViewModel
     {
         StudentDataService studentDataService;
         private ObservableCollection<Student> students;
@@ -30,7 +30,7 @@ namespace SchoolManagement.UI.ViewModels
             }
         }
 
-        public MainViewModel()
+        public StudentsViewModel()
         {
             initValues();
         }

@@ -12,7 +12,7 @@ namespace SchoolManagement.UI
 
         public App()
         {
-            MainViewModel vm = new MainViewModel();
+            StudentsViewModel vm = new StudentsViewModel();
             _wnd = new MainWindow(vm);
             _wnd.Show();
         }
