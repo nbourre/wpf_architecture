@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagement.UI", "Scho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagement.Models", "SchoolManagement.Models\SchoolManagement.Models.csproj", "{D7882512-FC8D-4FD7-B778-38E297D3F6D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement.Business", "SchoolManagement.Business\SchoolManagement.Business.csproj", "{C8FD4AC7-A6C2-4D27-837E-A15D1F2E224D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagement.Business", "SchoolManagement.Business\SchoolManagement.Business.csproj", "{C8FD4AC7-A6C2-4D27-837E-A15D1F2E224D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
