@@ -20,9 +20,12 @@
             <MenuItem Header="Édition"/>
             <MenuItem Header="Affichage"/>
             <MenuItem Header="Enregistrement">
-                <MenuItem Header="Nouveau"/>
+                <MenuItem Header="Nouveau" Click="NewRecord_Click"/>
             </MenuItem>
         </Menu>
+        <ToolBar DockPanel.Dock="Top">
+            <Button Content="Nouveau" Click="NewRecord_Click"/>
+        </ToolBar>
         <DataGrid x:Name="dg" ItemsSource="{Binding Students}" AutoGenerateColumns="False"
                   SelectedItem="{Binding SelectedStudent, Mode=TwoWay}"
                   attachedProperties:SelectingItemAttachedProperty.SelectingItem="{Binding SelectedStudent}">
@@ -36,8 +39,8 @@
                         
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Margin="3 0" Padding="3" Content="Modifier"/>
-                                <Button Margin="3 0" Padding="3" Content="Supprimer"/>
+                                <Button Margin="3 0" Padding="3" Content="Modifier" Click="Modify_Click"/>
+                                <Button Margin="3 0" Padding="3" Content="Supprimer" Click="Delete_Click"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
