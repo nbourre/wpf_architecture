@@ -8,7 +8,7 @@ namespace SchoolManagement.UI
     /// <summary>
     /// Interaction logic for StudentModify.xaml
     /// </summary>
-    public partial class StudentModify : Window, INotifyPropertyChanged
+    public partial class StudentEditView : Window, INotifyPropertyChanged
     {
         Student student;
 
@@ -20,7 +20,7 @@ namespace SchoolManagement.UI
             } 
         }
 
-        public StudentModify(Student _student)
+        public StudentEditView(Student _student)
         {
             InitializeComponent();
 

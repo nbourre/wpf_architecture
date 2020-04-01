@@ -26,9 +26,8 @@ namespace SchoolManagement.UI
         }
 
         private void Modify_Click(object sender, RoutedEventArgs e)
-        {
-            
-            StudentModify wnd = new StudentModify((Student)dg.SelectedItem);
+        {            
+            StudentEditView wnd = new StudentEditView((Student)dg.SelectedItem);
 
             wnd.ShowDialog();
         }
