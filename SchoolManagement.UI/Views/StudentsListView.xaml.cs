@@ -21,8 +21,14 @@ namespace SchoolManagement.UI
 
         private void NewRecord_Click(object sender, RoutedEventArgs e)
         {
-            Student student = new Student() { FirstName = "Undefined", LastName = "Undefined", RegistrationNumber = "0000000"};
-            _vm.Students.Add(student);
+            Student student = new Student() { FirstName = "Undefined", LastName = "Undefined", RegistrationNumber = "0000000" };
+
+            StudentEditView wnd = new StudentEditView(student);
+
+            if (wnd.ShowDialog() == true)
+            {
+                _vm.Students.Add(student);
+            }
         }
 
         private void Modify_Click(object sender, RoutedEventArgs e)

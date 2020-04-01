@@ -45,6 +45,8 @@ namespace SchoolManagement.UI
             Student.LastName = txtLastName.Text;
             Student.RegistrationNumber = txtRegistrationNumber.Text;
 
+            this.DialogResult = true;
+
             this.Close();
 
         }
