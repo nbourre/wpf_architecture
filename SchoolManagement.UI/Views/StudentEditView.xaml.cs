@@ -1,4 +1,5 @@
 ﻿using SchoolManagement.Models;
+using SchoolManagement.UI.ViewModels;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -8,42 +9,29 @@ namespace SchoolManagement.UI
     /// <summary>
     /// Interaction logic for StudentModify.xaml
     /// </summary>
-    public partial class StudentEditView : Window, INotifyPropertyChanged
+    public partial class StudentEditView : Window
     {
-        Student student;
+        StudentViewModel vm;
 
-        public Student Student { 
-            get => student;
-            set { 
-                student = value;
-                OnPropertyChanged();
-            } 
-        }
-
-        public StudentEditView(Student _student)
+        public StudentEditView(StudentViewModel _vm)
         {
             InitializeComponent();
 
-            Student = _student;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            vm = _vm;
+            this.DataContext = vm;
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
+            this.DialogResult = false;
             this.Close();
         }
 
         private void Validate_Click(object sender, RoutedEventArgs e)
         {
-            Student.FirstName = txtFirstName.Text;
-            Student.LastName = txtLastName.Text;
-            Student.RegistrationNumber = txtRegistrationNumber.Text;
+            vm.Student.FirstName = txtFirstName.Text;
+            vm.Student.LastName = txtLastName.Text;
+            vm.Student.RegistrationNumber = txtRegistrationNumber.Text;
 
             this.DialogResult = true;
 

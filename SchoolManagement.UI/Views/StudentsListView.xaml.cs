@@ -7,11 +7,11 @@ namespace SchoolManagement.UI
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StudentsListView : Window
     {
         StudentsViewModel _vm;
 
-        public MainWindow(StudentsViewModel viewModel)
+        public StudentsListView(StudentsViewModel viewModel)
         {
             InitializeComponent();
 
@@ -23,7 +23,7 @@ namespace SchoolManagement.UI
         {
             Student student = new Student() { FirstName = "Undefined", LastName = "Undefined", RegistrationNumber = "0000000" };
 
-            StudentEditView wnd = new StudentEditView(student);
+            StudentEditView wnd = new StudentEditView(new StudentViewModel(student));
 
             if (wnd.ShowDialog() == true)
             {
@@ -33,7 +33,7 @@ namespace SchoolManagement.UI
 
         private void Modify_Click(object sender, RoutedEventArgs e)
         {            
-            StudentEditView wnd = new StudentEditView((Student)dg.SelectedItem);
+            StudentEditView wnd = new StudentEditView(new StudentViewModel((Student)dg.SelectedItem));
 
             wnd.ShowDialog();
         }

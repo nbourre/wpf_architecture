@@ -8,12 +8,12 @@ namespace SchoolManagement.UI
     /// </summary>
     public partial class App : Application
     {
-        MainWindow _wnd;
+        StudentsListView _wnd;
 
         public App()
         {
             StudentsViewModel vm = new StudentsViewModel();
-            _wnd = new MainWindow(vm);
+            _wnd = new StudentsListView(vm);
             _wnd.Show();
         }
     }
