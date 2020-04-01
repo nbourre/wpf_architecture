@@ -1,7 +1,4 @@
-﻿using SchoolManagement.Models;
-using SchoolManagement.UI.ViewModels;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using SchoolManagement.UI.ViewModels;
 using System.Windows;
 
 namespace SchoolManagement.UI

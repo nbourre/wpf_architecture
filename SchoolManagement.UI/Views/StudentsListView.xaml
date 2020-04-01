@@ -14,17 +14,21 @@
             </Style.Setters>
         </Style>
     </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="local:CustomCommands.New" CanExecute="AlwaysTrue_CanExecute" Executed="NewStudent_Executed"/>
+        <CommandBinding Command="local:CustomCommands.Modify" CanExecute="AlwaysTrue_CanExecute" Executed="Modify_Click"/>
+    </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Fichier"/>
             <MenuItem Header="Édition"/>
             <MenuItem Header="Affichage"/>
             <MenuItem Header="Enregistrement">
-                <MenuItem Header="Nouveau" Click="NewRecord_Click"/>
+                <MenuItem Command="local:CustomCommands.New"/>
             </MenuItem>
         </Menu>
         <ToolBar DockPanel.Dock="Top">
-            <Button Content="Nouveau" Click="NewRecord_Click"/>
+            <Button Command="local:CustomCommands.New">Nouveau</Button>
         </ToolBar>
         <DataGrid x:Name="dg" ItemsSource="{Binding Students}" AutoGenerateColumns="False"
                   SelectedItem="{Binding SelectedStudent, Mode=TwoWay}"
@@ -39,7 +43,7 @@
                         
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Margin="3 0" Padding="3" Content="Modifier" Click="Modify_Click"/>
+                                <Button Margin="3 0" Padding="3" Command="local:CustomCommands.Modify">Modifier</Button>
                                 <Button Margin="3 0" Padding="3" Content="Supprimer" Click="Delete_Click"/>
                             </StackPanel>
                         </DataTemplate>
