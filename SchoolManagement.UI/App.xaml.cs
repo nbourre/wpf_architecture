@@ -1,4 +1,5 @@
 ﻿using SchoolManagement.UI.ViewModels;
+using SchoolManagement.UI.Views;
 using System.Windows;
 
 namespace SchoolManagement.UI
@@ -8,13 +9,15 @@ namespace SchoolManagement.UI
     /// </summary>
     public partial class App : Application
     {
-        StudentsListView _wnd;
+        MainWindowView _wnd;
 
         public App()
         {
-            StudentsViewModel vm = new StudentsViewModel();
-            _wnd = new StudentsListView(vm);
+            //StudentsViewModel vm = new StudentsViewModel();
+            //_wnd = new zOld_MainWindowView(vm);
+            _wnd = new MainWindowView();
             _wnd.Show();
         }
+
     }
 }

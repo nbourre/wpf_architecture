@@ -1,6 +1,8 @@
 ﻿using SchoolManagement.Business;
 using SchoolManagement.Models;
+using SchoolManagement.UI.ViewModels.Commands;
 using System.Collections.ObjectModel;
+using System.Windows;
 
 namespace SchoolManagement.UI.ViewModels
 {
@@ -9,6 +11,8 @@ namespace SchoolManagement.UI.ViewModels
         StudentDataService studentDataService;
         private ObservableCollection<Student> students;
         private Student selectedStudent;
+
+        public ModifyCommand ModifyStudentCommand { get; set; }
 
         public ObservableCollection<Student> Students
         {
@@ -33,12 +37,19 @@ namespace SchoolManagement.UI.ViewModels
         public StudentsViewModel()
         {
             initValues();
+
+            ModifyStudentCommand = new ModifyCommand(ModifyStudent);
         }
 
         private void initValues()
         {
             studentDataService = new StudentDataService();
             Students = new ObservableCollection<Student>(studentDataService.GetAll());
+        }
+
+        private void ModifyStudent()
+        {
+
         }
     }
 }
