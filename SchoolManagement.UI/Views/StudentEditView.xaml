@@ -21,13 +21,15 @@
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Prénom :" VerticalAlignment="Center" Margin="6"/>
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Nom de famille :" VerticalAlignment="Center" Margin="6"/>
 
-        <TextBox x:Name="txtRegistrationNumber" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="6" Text="{Binding Student.RegistrationNumber, Mode=OneWay}"/>
-        <TextBox x:Name="txtFirstName" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="6" Text="{Binding Student.FirstName, Mode=OneWay}"/>
-        <TextBox x:Name="txtLastName" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="6" Text="{Binding Student.LastName, Mode=OneWay}"/>
+        <TextBox x:Name="txtRegistrationNumber" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="6" Text="{Binding Student.RegistrationNumber}"/>
+        <TextBox x:Name="txtFirstName" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="6" Text="{Binding Student.FirstName}"/>
+        <TextBox x:Name="txtLastName" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="6" Text="{Binding Student.LastName}"/>
 
         <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Margin="6" Height="25" Content="Valider" Padding="3"/>
-            <Button Margin="6" Height="25" Content="Cancel" Padding="3" />
+            <Button Margin="6" Height="25" Content="Valider" Padding="3" 
+                    Command="{Binding Path=DataContext.ValidateStudentCommand,
+                                RelativeSource={RelativeSource AncestorType={x:Type local:MainWindowView}}}"/>
+            <Button Margin="6" Height="25" Content="Cancel" Padding="3" Command="{Binding CancelCommand}" />
         </StackPanel>
     </Grid>
 </UserControl>

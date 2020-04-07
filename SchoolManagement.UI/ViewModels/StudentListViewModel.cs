@@ -6,13 +6,12 @@ using System.Windows;
 
 namespace SchoolManagement.UI.ViewModels
 {
-    public class StudentsViewModel : BaseViewModel
+    public class StudentListViewModel : BaseViewModel
     {
         StudentDataService studentDataService;
         private ObservableCollection<Student> students;
         private Student selectedStudent;
 
-        public ModifyCommand ModifyStudentCommand { get; set; }
 
         public ObservableCollection<Student> Students
         {
@@ -34,11 +33,9 @@ namespace SchoolManagement.UI.ViewModels
             }
         }
 
-        public StudentsViewModel()
+        public StudentListViewModel()
         {
             initValues();
-
-            ModifyStudentCommand = new ModifyCommand(ModifyStudent);
         }
 
         private void initValues()
@@ -47,9 +44,5 @@ namespace SchoolManagement.UI.ViewModels
             Students = new ObservableCollection<Student>(studentDataService.GetAll());
         }
 
-        private void ModifyStudent()
-        {
-
-        }
     }
 }

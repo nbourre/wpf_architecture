@@ -9,11 +9,11 @@
         mc:Ignorable="d"
         Title="MainWindowView" Height="450" Width="800">
     <Window.Resources>
-        <DataTemplate DataType="{x:Type vm:StudentsViewModel}">
-            <views:StudentsListView DataContext="{Binding}"/>
+        <DataTemplate DataType="{x:Type vm:StudentListViewModel}">
+            <views:StudentListView />
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:StudentViewModel}">
-            <views:StudentEditView DataContext="{Binding}"/>
+            <views:StudentEditView />
         </DataTemplate>
                       
     </Window.Resources>
@@ -29,6 +29,6 @@
         <ToolBar DockPanel.Dock="Top">
             <Button >Nouveau</Button>
         </ToolBar>
-        <ContentPresenter Content="{Binding}"/>
+        <ContentPresenter Content="{Binding ViewModel}"/>
     </DockPanel>
 </Window>

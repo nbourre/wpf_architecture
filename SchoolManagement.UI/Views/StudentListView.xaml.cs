@@ -5,9 +5,9 @@ namespace SchoolManagement.UI.Views
     /// <summary>
     /// Interaction logic for StudentsLiewViewxaml.xaml
     /// </summary>
-    public partial class StudentsListView : UserControl
+    public partial class StudentListView : UserControl
     {
-        public StudentsListView()
+        public StudentListView()
         {
             InitializeComponent();
         }

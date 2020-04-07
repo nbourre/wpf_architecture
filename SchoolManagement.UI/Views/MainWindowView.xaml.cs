@@ -22,7 +22,7 @@ namespace SchoolManagement.UI.Views
         {
             InitializeComponent();
 
-            DataContext = new StudentsViewModel();
+            DataContext = new MainViewModel();
         }
     }
 }
